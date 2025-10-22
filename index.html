@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CINEMATE — Film & Dizi Öneri</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Sinema perdesi animasyonu -->
+  <div class="curtain left"></div>
+  <div class="curtain right"></div>
+
+  <!-- Arka plan -->
+  <div class="bg"></div>
+  <div class="overlay"></div>
+
+  <!-- Başlık bölümü -->
+  <header class="hero">
+    <div class="logo"><span>🎬</span>CINEMATE</div>
+    <h1 class="title">İzleyecek bir şey mi arıyorsun?</h1>
+    <p class="subtitle">Tür seç veya sor — sana posterli, kısa özetli öneriler veririm.</p>
+    <div class="controls">
+      <select id="genreSelect" aria-label="Tür seç">
+        <option value="">Tüm türler</option>
+      </select>
+      <input id="query" type="text" placeholder="Ör: romantik komedi gibi öneri ver" />
+      <button id="askBtn">Öneri İste</button>
+    </div>
+  </header>
+
+  <!-- Öneri + poster ızgarası -->
+  <main class="container">
+    <section class="recommendations" id="recommendations">
+      <!-- JS ile dolar -->
+    </section>
+
+    <!-- Sağ alt: Chatbot aç/kapat -->
+    <div id="chatToggle" title="Cinemate Chatbot">💬</div>
+    <aside id="chat" class="chat hidden">
+      <div class="chat-header">
+        <div>Cinemate AI</div>
+        <button id="closeChat">✕</button>
+      </div>
+      <div class="chat-body" id="chatBody">
+        <div class="bot">Merhaba! Hangi türleri seviyorsun? (ör: aksiyon, romantik, komedi, korku, dram, bilimkurgu)</div>
+      </div>
+      <div class="chat-input">
+        <input id="chatInput" placeholder="Mesaj yaz..." />
+        <button id="chatSend">Gönder</button>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Poster modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <button id="modalClose" class="modal-close">✕</button>
+      <img id="modalImg" src="" alt="Poster" />
+      <div id="modalInfo" class="modal-info"></div>
+    </div>
+  </div>
+
+  <footer class="footer">© Cinemate • Tasarım: Rabia Çoban</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
